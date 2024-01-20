@@ -24,17 +24,10 @@
     </style>
 </head>
 <body>
-    <div class="main2">
-        <div id="day"></div>
-    </div>
-    <div class="main">
-        <div id="clock"></div>
-    </div>
+    <div id="day"></div>
+    <div id="clock"></div>
  
     <script>
-        // Calling showTime function at every second
-        setInterval(showTime, 1000);
-
         // Defining showTime funcion
         function showTime() {
             // Getting current time and date
@@ -42,21 +35,19 @@
             let hour = time.getHours();
             let min = time.getMinutes();
             let sec = time.getSeconds();
-            am_pm = "AM";
+            let ampm = "";
 
             // Setting time for 12 Hrs format
             if (hour >= 12) 
             { 
-                hour -= 12;
-                am_pm = "PM";
+              ampm = "PM";
             } 
-            else if (hour == 0) 
+            else if (hour <= 12) 
             {
-                hr = 12;
-                am_pm = "AM";
+              ampm = "AM";
             }
 
-
+            
             // for hour 
             if (hour < 10) 
             {
@@ -76,9 +67,12 @@
             }
 
             // Displaying the time
-            let currentTime = hour + " : " + min +" : " + sec + " " + am_pm;
+            let currentTime = hour + " : " + min +" : " + sec + " " + ampm;
             document.getElementById("clock").innerHTML = currentTime;
             // console.log(clock.innerHTML);
+
+            // Calling showTime function at every second
+            setInterval(showTime, 1000);
         }
         showTime();
 
@@ -104,28 +98,27 @@
         } 
         else if (subdata==4) 
         {
-                subdata="Thursday";  
+          subdata="Thursday";  
         } 
         else if (subdata==5)
          {
-                subdata="Friday";  
+          subdata="Friday";  
         }
          else if (subdata==6)
           {
-                subdata="saturday";  
+          subdata="saturday";  
         }
          else if (subdata==7)
           {
-                subdata="Sunday";  
+          subdata="Sunday";  
         }
         else
         {
-            subdata='Thanks';
+          subdata='Thanks';
         }
-        // document.getElementById('day').innerHTML=subdata+',';
-
+        
+        
         let month=date.getMonth();
-
         switch(month)
         {
         case 0:
@@ -155,7 +148,7 @@
         case 8:
           month="September";
           break;
-        case 9:
+          case 9:
           month="October";
           break;
         case 10:
@@ -164,16 +157,17 @@
         case 11:
           month="December";
           break;
-          default:
-            month="Invalid month";
+        default:
+          month="Invalid month";
         }
-            
+                
+        // document.getElementById('day').innerHTML=subdata+',';
         let day=date.getDate();
         let year=date.getFullYear();
         document.getElementById('day').innerHTML=subdata+','+month+","+day+","+year;
     }
     second();
-    setInterval(second,100);
+    setInterval(second,1000);
     </script>
 </body>
 </html>
