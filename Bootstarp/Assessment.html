@@ -36,10 +36,11 @@
     .bhargav
     {
       display: flex;
-      font-size: 18px;
+      font-size: 15px;
       border-radius: 20px;
       border: 0px;
       margin-top: 10px;
+      padding: 7px 62px;
     }
     .carousel
     {
@@ -75,20 +76,20 @@
       <!-- Username -->
       <div class="form-outline mb-2">
         <label class="form-label mt-2" for="form1Example13">Username</label>
-        <input type="text" id="username"class="form-control form-control px-4" oninput="function1(this,'error1','Username')" placeholder="Username"/>
+        <input type="text" id="username"class="form-control px-4" oninput="function1(this,'error1','Username')" placeholder="Username"/>
         <span id="error1"></span>
       </div>
       
       <!-- Password -->
       <div class="form-outline mb-2">
         <label class="form-label mt-2" for="form1Example13">Password</label>
-        <input type="password" id="password" class="form-control form-control px-4" oninput="function1(this,'error2','Password')" placeholder="Password"/>
+        <input type="password" id="password" class="form-control px-4" oninput="function1(this,'error2','Password')" placeholder="Password"/>
         <span id="error2"></span>
       </div>
       
       <!-- sing in button -->
       <div class="col-auto">
-        <button class="bhargav bg-primary py-1 px-5" onclick="myfun()" style="color: #fff;">Confirm identity</button>
+        <button class="bhargav bg-primary" onclick="myfun()" style="color: #fff;">Confirm identity</button>
       </div>
       <div class="Sign-in my-2">
         <a href="" style="text-decoration: none; font-size: 15px;">Forget Password?<span style="color: black;">or</span>Sign in? </a>
